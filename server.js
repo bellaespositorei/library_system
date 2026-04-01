@@ -1,18 +1,8 @@
-import http from "http";
+import "dotenv/config";
+import app from "./src/app.js";
 
 const PORT = 3000;
 
-const routes = {
-  "/": "Curso de Node.js",
-  "/books": "Hello Books",
-  "/authors": "Hello Authors",
-};
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-type": "text/plain" });
-  res.end(routes[req.url]);
-});
-
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("Servidor de olho");
 });
